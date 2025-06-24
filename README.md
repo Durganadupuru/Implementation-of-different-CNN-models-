@@ -25,3 +25,36 @@ This helps identify models that balance **accuracy**, **complexity**, and **effi
 | AlexNet       | 99.25%         | 88.89%        | 46,764,804    | 178.39 MB|
 
 > 📌 *Table: Model performance comparison for maize leaf disease classification*
+>
+> ## 🚀 Deployment on Jetson Nano
+
+The final trained model was successfully deployed on an **NVIDIA Jetson Nano**, enabling real-time maize leaf disease detection on a low-cost edge device.
+
+### 🧰 Deployment Details:
+
+- **Device**: NVIDIA Jetson Nano (4GB RAM)
+- **Framework**: TensorFlow/Keras
+- **OS**: Ubuntu 18.04 with JetPack
+- **Model Used**: Custom CNN / MobileNetV2 (for lightweight performance)
+- **Input**: Live camera feed or uploaded leaf images
+- **Output**: Predicted disease class with confidence score
+
+### ⚙️ Optimizations:
+
+- Converted the `.h5` Keras model to `.tflite` format for faster inference
+- Used OpenCV for real-time image capture and preprocessing
+- Applied model quantization to reduce size and increase speed (optional)
+
+### 📸 Example Use Case:
+
+- Connect a USB camera or use the PiCam
+- Capture image of a maize leaf
+- Model predicts: `Blight – Confidence: 97.4%`
+
+### 📦 Jetson Nano Setup (Quick Steps):
+
+1. Flash JetPack OS to SD card
+2. Install TensorFlow:
+   ```bash
+   pip3 install tensorflow
+
